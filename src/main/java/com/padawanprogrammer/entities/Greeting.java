@@ -1,20 +1,18 @@
 package com.padawanprogrammer.entities;
 
+import java.util.UUID;
+
 public class Greeting {
-	private static int count;
-	private String name;
+	private UUID id;
+	private String name = "Hello ";
 	
 	public Greeting(String name) {
-		count++;
-		this.name = name;
+		id = UUID.randomUUID();
+		this.name += name;
 	}
 
-	public static int getCount() {
-		return count;
-	}
-
-	public static void setCount(int count) {
-		Greeting.count = count;
+	public UUID getId() {
+		return id;
 	}
 
 	public String getName() {
